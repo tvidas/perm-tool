@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.eclipse.core.resources.markers" name="%extension-point.name" schema="schema/org.eclipse.core.resources.markers.exsd"/>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="%category.name"
+            id="edu.cmu.cups.androidpermissions.commands.category">
+      </category>
+      <command
+            name="%command.name"
+            categoryId="edu.cmu.cups.androidpermissions.commands.category"
+            id="edu.cmu.cups.androidpermissions.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="edu.cmu.cups.androidpermissions.commands.sampleCommand"
+            class="edu.cmu.cups.androidpermissions.handlers.SampleHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="edu.cmu.cups.androidpermissions.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="%menu.label"
+               mnemonic="%menu.mnemonic"
+               id="edu.cmu.cups.androidpermissions.menus.sampleMenu">
+            <command
+                  commandId="edu.cmu.cups.androidpermissions.commands.sampleCommand"
+                  mnemonic="%command.mnemonic"
+                  id="edu.cmu.cups.androidpermissions.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="edu.cmu.cups.androidpermissions.toolbars.sampleToolbar">
+            <command
+                  commandId="edu.cmu.cups.androidpermissions.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="%command.tooltip"
+                  id="edu.cmu.cups.androidpermissions.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+     <extension
+      id="amarker"
+      point="org.eclipse.core.resources.markers" />
+   <extension
+         id="cupsmarker"
+         name="%extension.name"
+         point="org.eclipse.core.resources.markers">
+         <super type="org.eclipse.core.resources.problemmarker">
+         </super>
+   		<super type="edu.cmu.cups.amarker">
+   		</super>
+   	
+ 		<persistent value="true"> 
+   		</persistent> 
+   		
+   </extension>
+
+
+</plugin>

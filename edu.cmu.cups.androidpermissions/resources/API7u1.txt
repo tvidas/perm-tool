@@ -1,0 +1,172 @@
+#
+#    Android permission tool for Eclipse
+#    Copyright (C) 2010 Tim Vidas <tvidas at cmu d0t edu>
+#
+#    This program is free software; you can redistribute it and/or modify it
+#    under the terms of the GNU General Public License as published by the Free
+#    Software Foundation; either version 2 of the License, or (at your option)
+#    any later version.
+#
+#    This program is distributed in the hope that it will be useful, but WITHOUT
+#    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+#    FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+#    more details.
+#
+#    You should have received a copy of the GNU General Public License along with
+#    this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+#    Place, Suite 330, Boston, MA 02111-1307 USA
+#
+#Permission to API mapping for Android API 7update1
+#
+#Comments start with a # and are ignored
+#
+#a permission is a ; separated triplet:  TYPE;PERMISSION;APIINTERFACE
+# where TYPE is "FUNCTION" or "CLASS"
+#       PERMISSION is the Android permission 
+#       APIINTERFACE is a , delimited list of interfaces related to TYPE 
+#                           (so if TYPE is FUNCTION, APIINTERFACE is a list of functions that req PERMISSION) 
+#
+# functions that have an OR permission should be tagged with a trailing * in the APIINTERFACE 
+#                                                  (see android.accounts.invalidateAuthToken)
+#
+#FUNCTION;android.permission.BLUETOOTH;BluetoothAdapter.getName
+#FUNCTION;android.permission.BLUETOOTH_ADMIN;somefunction,someotherfunction,thirdfunc
+#FUNCTION;android.permission.GET_TASKS;getRecentTasks,getRunningTasks
+#FUNCTION;android.permission.KILL_BACKGROUND_PROCESSES;killBackgroundProcess,restartPackage
+
+FUNCTION;android.permission.REBOOT;android.os.PowerManager.reboot;android.os.RecoverySystem.installPackage,android.ok.RecoverySystem.rebootWipeUserData
+FUNCTION;android.permission.BLUETOOTH;android.bluetooth.BluetoothAdapter.getAddress,android.bluetooth.BluetoothAdapter.getBondedDevices,android.bluetooth.BluetoothAdapter.getName,android.bluetooth.BluetoothAdapter.getScanMode,android.bluetooth.BluetoothAdapter.getState,android.bluetooth.BluetoothAdapter.isDiscovering,android.bluetooth.BluetoothAdapter.isEnabled,android.bluetooth.BluetoothAdapter.listenUsingRfcommWithServiceRecord,android.bluetooth.bluetoothDevice.createRfcommSocketToServiceRecord,android.bluetooth.bluetoothDevice.getBluetoothClass,android.bluetooth.bluetoothDevice.getBondedState,android.bluetooth.bluetoothDevice.getName,
+FUNCTION;android.permission.BLUETOOTH_ADMIN;android.bluetooth.BluetoothAdapter.disable,android.bluetooth.BluetoothAdapter.enable
+FUNCTION;android.permission.APPWIDGET_LIST;android.appwidget.AppWidgetManager.bindAppWidgetId
+FUNCTION;android.permission.BACKUP;android.app.backup.BackupManager.dataChanged
+FUNCTION;android.permission.KILL_BACKGROUND_PROCESSES;killBackgroundProcesses,restartPackage
+FUNCTION;android.permission.GET_TASKS;android.app.ActivityManager.getRecentTasks,android.app.ActivityManager.getRunningTasks
+#FUNCTION;android.permission.SET_WALLPAPER;
+FUNCTION;android.permission.SET_TIME;android.app.AlarmManager.setTime
+FUNCTION;android.permission.SET_TIME_ZONE;android.app.AlarmManager.setTimeZone
+#FUNCTION;android.permission.WRITE_CONTACTS;
+#FUNCTION;android.permission.READ_CONTACTS;
+#FUNCTION;android.permission.DEVICE_POWER;
+#FUNCTION;android.permission.STATUS_BAR;
+#FUNCTION;android.permission.EXPAND_STATUS_BAR;
+#FUNCTION;android.permission.VIBRATE;
+F#UNCTION;android.permission.PERSISTENT_ACTIVITY;
+#FUNCTION;android.permission.DISABLE_KEYGUARD;
+#FUNCTION;android.permission.INSTALL_PACKAGES;
+#FUNCTION;android.permission.WRITE_SETTINGS;
+#FUNCTION;android.permission.WRITE_SECURE_SETTINGS;
+#FUNCTION;android.permission.WRITE_SYNC_SETTINGS;
+#FUNCTION;android.permission.READ_SYNC_SETTINGS;
+#FUNCTION;android.permission.WRITE_OWNER_DATA;
+#FUNCTION;android.permission.READ_OWNER_DATA;
+FUNCTION;android.permission.ACCESS_FINE_LOCATION;android.location.LocationManager.addGpsStatusListener,android.location.LocationManager.addNmeaListener,android.telephony.TelephonyManager.getCellLocation*
+FUNCTION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;
+FUNCTION;android.permission.ACCESS_COARSE_LOCATION;android.telephony.TelephonyManager.getCellLocation*
+FUNCTION;android.permission.ACCESS_COARSE_UPDATES;android.telephony.TelephonyManager.getNeighboringCellInfo
+#FUNCTION;android.permission.DELETE_CACHE_FILES;
+#FUNCTION;android.permission.MOUNT_UNMOUNT_FILESYSTEMS;
+#FUNCTION;android.permission.ADD_SYSTEM_SERVICE;
+FUNCTION;android.permission.BROADCAST_STICKY;android.content.ContextWrapper.sendStickyBroadcast,android.content.ContextWrapper.removeStickyBroadcast
+#FUNCTION;android.app.cts.permission.TEST_GRANTED;
+#FUNCTION;android.permission.INJECT_EVENTS;
+#FUNCTION;android.permission.INTERNET;
+#FUNCTION;android.permission.ACCESS_NETWORK_STATE;
+#FUNCTION;android.permission.CHANGE_NETWORK_STATE;
+FUNCTION;android.permission.WAKE_LOCK;android.media.MediaPlayer.setWakeMode
+FUNCTION;android.permission.MODIFY_AUDIO_SETTINGS;android.media.AudioManager.startBluetoothSco,android.media.AudioManager.stopBluetoothSco
+#FUNCTION;android.permission.CALL_PHONE;
+FUNCTION;android.permission.ACCESS_MOCK_LOCATION;android.location.LocationManager.addTestProvider,android.location.LocationManager.clearTestProviderEnabled,android.location.LocationManager.clearTestProviderLocation,android.location.LocationManager.clearTestProviderStatus,android.location.LocationManager.removeTestProvider,android.location.LocationManager.setTestProviderEnabled,android.location.LocationManager.setTestProviderLocation,android.location.LocationManager.setTestProviderStatus
+#FUNCTION;android.permission.RECORD_AUDIO;
+FUNCTION;android.permission.DUMP;android.os.Debug.dumpService
+#FUNCTION;android.permission.INTERNET;
+#FUNCTION;android.permission.ACCESS_NETWORK_STATE;
+#FUNCTION;android.permission.CHANGE_NETWORK_STATE;
+#FUNCTION;android.permission.WAKE_LOCK;
+#FUNCTION;android.permission.ACCESS_WIFI_STATE;
+#FUNCTION;android.permission.CHANGE_WIFI_STATE;
+#FUNCTION;android.permission.CAMERA;
+#FUNCTION;android.permission.SET_PREFERRED_APPLICATIONS;
+#FUNCTION;android.permission.INSTALL_PACKAGES;
+#FUNCTION;android.permission.GET_PACKAGE_SIZE;
+#FUNCTION;android.permission.ACCESS_WIFI_STATE;
+#FUNCTION;android.permission.SEND_SMS;
+FUNCTION;android.permission.READ_PHONE_STATE;android.telephony.TelephonyManager.getDeviceId,getDeviceSoftwareVersion,android.telephony.TelephonyManager.getLine1Number,android.telephony.TelephonyManager.getSimSerialNumber,android.telephony.TelephonyManager.getSubscriberId,android.telephony.TelephonyManager.getVoiceMailAlphaTag,android.telephony.TelephonyManager.getVoiceMailNumber
+FUNCTION;com.android.browser.permission.READ_HISTORY_BOOKMARKS;android.provider.Browser.addSearchUrl,android.provider.Browser.canClearHistory,android.provider.Browser.getAllBookmarks,android.provider.Browser.getAllVisitedUrls,android.provider.Browser.requestAllIcons,android.provider.Browser.truncateHistory,android.provider.Browser.updateVisitedHistory
+FUNCTION;com.android.browser.permission.WRITE_HISTORY_BOOKMARKS;android.provider.Browser.addSearchUrl,android.provider.Browser.clearHistory,android.provider.Browser.clearSearches,android.provider.Browser.deleteFromHistory,android.provider.Browser.deleteHistoryTimeFrame,android.provider.Browser.truncateHistory,android.provider.Browser.updateVisitedHistory
+#FUNCTION;android.permission.WRITE_USER_DICTIONARY;
+#FUNCTION;android.permission.READ_USER_DICTIONARY;
+#FUNCTION;android.permission.WRITE_EXTERNAL_STORAGE;
+FUNCTION;android.permission.READ_LOGS;android.os.DropBoxManager.getNextEntry
+FUNCTION;android.permission.MANAGE_ACCOUNTS;android.accounts.addAccount,android.accounts.clearPassword,android.accounts.confirmCredentials,android.accounts.editProperties,android.account.getAuthTokenByFeatures,android.accounts.invalidateAuthToken*,android.accounts.removeAccount,android.accounts.updateCredentials
+FUNCTION;android.permission.AUTHENTICATE_ACCOUNTS;android.accounts.addAccountExplicitly,android.account.getPassword,android.account.getUserData,android.accounts.peekAuthToken,android.accounts.setAuthToken,android.accounts.setPassword,android.accounts.setAuthToken
+FUNCTION;android.permission.GET_ACCOUNTS;android.accounts.getAccounts,android.accounts.getAccountsByType,android.accounts.getAccountsByTypeAndFeatures,android.accounts.hasFeatures
+FUNCTION;android.permission.USE_CREDENTIALS;android.accounts.blockingGetAuthToken,android.accounts.getAuthToken,android.accounts.invalidateAuthToken*
+#FUNCTION;android.permission.READ_SYNC_SETTINGS;
+#FUNCTION;android.permission.WRITE_SYNC_SETTINGS;
+#FUNCTION;android.permission.READ_SYNC_STATS;
+
+CLASS;android.permission.BIND_INPUT_METHOD;android.view.inputmethod.InputMethod,android.view.inputmethod.InputMethodManager
+CLASS;android.permission.BLUETOOTH;android.bluetooth.bluetoothServerSocket,android.bluetooth.bluetoothSocket,android.bluetooth.bluetoothDevice
+#CLASS;android.permission.GET_TASKS;
+CLASS;android.permission.SET_WALLPAPER;android.service.wallpaper.WallpaperService
+#CLASS;android.permission.SET_TIME_ZONE;
+#CLASS;android.permission.WRITE_CONTACTS;
+#CLASS;android.permission.READ_CONTACTS;
+#CLASS;android.permission.DEVICE_POWER;
+#CLASS;android.permission.STATUS_BAR;
+#CLASS;android.permission.EXPAND_STATUS_BAR;
+#CLASS;android.permission.VIBRATE;
+#CLASS;android.permission.PERSISTENT_ACTIVITY;
+#CLASS;android.permission.DISABLE_KEYGUARD;
+#CLASS;android.permission.INSTALL_PACKAGES;
+#CLASS;android.permission.WRITE_SETTINGS;
+#CLASS;android.permission.WRITE_SECURE_SETTINGS;
+#CLASS;android.permission.WRITE_SYNC_SETTINGS;
+#CLASS;android.permission.READ_SYNC_SETTINGS;
+#CLASS;android.permission.WRITE_OWNER_DATA;
+#CLASS;android.permission.READ_OWNER_DATA;
+#CLASS;android.permission.ACCESS_FINE_LOCATION;
+#CLASS;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;
+#CLASS;android.permission.ACCESS_COARSE_LOCATION;
+#CLASS;android.permission.DELETE_CACHE_FILES;
+#CLASS;android.permission.MOUNT_UNMOUNT_FILESYSTEMS;
+#CLASS;android.permission.ADD_SYSTEM_SERVICE;
+#CLASS;android.permission.BROADCAST_STICKY;
+#CLASS;android.app.cts.permission.TEST_GRANTED;
+#CLASS;android.permission.INJECT_EVENTS;
+CLASS;android.permission.INTERNET;android.webkit.WebView
+#CLASS;android.permission.ACCESS_NETWORK_STATE;
+#CLASS;android.permission.CHANGE_NETWORK_STATE;
+#CLASS;android.permission.WAKE_LOCK;
+#CLASS;android.permission.MODIFY_AUDIO_SETTINGS;
+#CLASS;android.permission.CALL_PHONE;
+#CLASS;android.permission.ACCESS_MOCK_LOCATION;
+CLASS;android.permission.RECORD_AUDIO;android.speech.SpeechRecognizer
+#CLASS;android.permission.DUMP;
+#CLASS;android.permission.INTERNET;
+#CLASS;android.permission.ACCESS_NETWORK_STATE;
+#CLASS;android.permission.CHANGE_NETWORK_STATE;
+#CLASS;android.permission.WAKE_LOCK;
+#CLASS;android.permission.ACCESS_WIFI_STATE;
+#CLASS;android.permission.CHANGE_WIFI_STATE;
+CLASS;android.permission.CAMERA;android.hardware.Camera
+#CLASS;android.permission.SET_PREFERRED_APPLICATIONS;
+#CLASS;android.permission.INSTALL_PACKAGES;
+#CLASS;android.permission.GET_PACKAGE_SIZE;
+#CLASS;android.permission.ACCESS_WIFI_STATE;
+#CLASS;android.permission.SEND_SMS;
+#CLASS;android.permission.READ_PHONE_STATE;
+#CLASS;com.android.browser.permission.READ_HISTORY_BOOKMARKS;
+#CLASS;com.android.browser.permission.WRITE_HISTORY_BOOKMARKS;
+#CLASS;android.permission.WRITE_USER_DICTIONARY;
+#CLASS;android.permission.READ_USER_DICTIONARY;
+#CLASS;android.permission.WRITE_EXTERNAL_STORAGE;
+#CLASS;android.permission.READ_LOGS;
+#CLASS;android.permission.MANAGE_ACCOUNTS;
+#CLASS;android.permission.AUTHENTICATE_ACCOUNTS;
+#CLASS;android.permission.GET_ACCOUNTS;
+#CLASS;android.permission.USE_CREDENTIALS;
+#CLASS;android.permission.READ_SYNC_SETTINGS;
+#CLASS;android.permission.WRITE_SYNC_SETTINGS;
+#CLASS;android.permission.READ_SYNC_STATS;
+    
